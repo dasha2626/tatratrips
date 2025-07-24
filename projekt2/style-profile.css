@@ -1,0 +1,357 @@
+*{
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box; 
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgba(167,179,93,255);
+}
+
+section{
+  padding: 2rem 9%;
+}
+
+
+.heading{
+  text-align: center;
+  font-size: 4rem;
+  color: #fff;
+  padding:1rem;
+  margin:2rem 0;
+  background: #76b9bf;
+  border-radius: 15px;
+  
+}
+
+.heading span{
+  color: #f8d7a3;
+}
+
+.btn{
+  display: inline-block;
+  margin-top: 2rem;
+  border-radius: 2rem;
+  background: #333;
+  color: #fff;
+  padding:0.7rem 2rem;
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+
+.btn:hover{
+  background: #5d8fb1;
+}
+
+.header{
+position: relative; 
+top: 0;      
+left: 0;      
+width: 100%;    
+padding: 25px 12.5%;   
+background: transparent;   
+display: flex;    
+justify-content: space-between;   
+align-items: center;   
+z-index: 100;       
+}
+
+
+.navbar a{
+position: relative;  
+font-size: 16px;    
+color: black;  
+text-decoration: none;  
+font-weight: 500;  
+margin-right: 30px; 
+
+}
+
+.navbar a::after {  
+content: ' '; 
+position: absolute; 
+left: 0; 
+bottom: -6px;  
+width: 100%;
+height: 2px; 
+background: black; 
+border-radius: 5px;  
+transform: translateY(10px); 
+opacity: 0;  
+transition: .5s;  
+}
+
+.navbar a:hover::after {    
+transform: translateY(0);  
+opacity: 1;  
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;  
+  height: 100vh;  
+   background: url(nature.jpg)no-repeat center center fixed; 
+  background-size: cover; 
+  background-position: center; 
+  filter: blur(10px);  
+  z-index: -1;
+  
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px; 
+}
+
+.container-profil {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 100px 2rem 2rem; /* odsuwa od góry */
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+
+.profil-box {
+  width: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.profil-box .input-box input,
+.profil-box .input-box textarea {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #fff;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.profil-box .input-box label {
+  color: #000000;
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.profil-box textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.profil-box .btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #76b9bf;
+  border: none;
+  border-radius: 5px;
+  color: rgb(254, 253, 253);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.profil-box .btn:hover {
+  background-color: #5aa3ad;
+}
+
+.profil-box .login-register {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.profil-box .login-register a {
+  color: #f8d7a3;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+
+.menu-toggle2 {
+display: none; 
+}
+
+.input-box {
+  position: relative;
+  width: 340px;
+  height: 50px;
+  margin: 30px 0;
+}
+
+.input-box input,
+.input-box textarea {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: black;
+  font-weight: 500;
+  padding-right: 28px;
+  resize: none;
+}
+
+.input-box label {
+  position: absolute;
+  top: -5px;
+  left: 0;
+  font-size: 12px;
+  font-weight: 500;
+  color: #000000;
+  pointer-events: none;
+}
+
+/* Czarny kolor tekstu i etykiety tylko dla inputu email */
+.input-box.email input {
+  color: black;
+}
+
+.input-box.email label {
+  color: black;
+}
+
+
+/* Specjalne przesunięcie dla labeli input[type="file"] */
+.input-box input[type="file"] + label {
+  position: relative;
+  top: -85px; /* podnieś etykietę o 10px wyżej */
+  color: rgb(0, 0, 0);
+}
+
+.form-box h2 {
+  text-align: center;
+  width: 100%;
+}
+
+
+/* Styl pól do wyświetlania danych w trybie tylko do odczytu */
+.input-box.readonly {
+  position: relative;
+  width: 340px;
+  height: auto;
+  border-bottom: 2px solid white;
+  margin: 30px 0;
+}
+
+.input-box.readonly label {
+  position: absolute;
+  top: -5px;
+  left: 0;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  pointer-events: none;
+}
+
+.readonly-field {
+  font-size: 16px;
+  color: black;
+  font-weight: 500;
+  padding-top: 20px;
+  white-space: pre-line; /* zachowuje enter w adresie i opisie */
+}
+
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px; 
+}
+
+
+
+.user-menu {
+  position: relative;
+}
+
+.user-pic {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.sub-menu-wrap {
+  position: absolute;
+  top: 100%;
+  right: 10%; 
+  width: 400px; 
+  max-height: 0;
+  overflow: hidden;
+  background:rgb(163,188,101);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: max-height 0.5s ease; 
+
+}
+
+.sub-menu-wrap.open-menu {
+  max-height: 600px; 
+}
+
+.sub-menu {
+  padding: 15px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.user-info img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-info h3 {
+  font-size: 16px; 
+  margin: 0; 
+  color: #333; 
+  font-weight: bold;
+}
+
+
+.sub-menu-link {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  border-radius: 4px;
+  transition: color 0.3s ease; 
+  font-weight: bold;
+}
+
+
+
+.sub-menu-link:hover {
+color: #ffffff;
+}
+
+[contenteditable="true"] {
+  background-color: #f9f9f9; 
+  outline: none;
+}
+
+

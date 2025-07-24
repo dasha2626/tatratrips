@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+ <html LANG="pl">
+
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+    content="IE=edge">
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+    <title>TatraTrips</title>
+    <link rel="stylesheet" href="style-login2.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ </head>
+
+
+ <body>
+
+    <header class="header">
+     
+
+    
+    </header>
+
+           <div class="background"></div>
+           <div class="container">
+            <div class="content">
+                <h2 class="logo"><i class="fa-solid fa-mountain"></i>
+                    TatraTrips</h2>
+
+                    <div class="text-sci"><h2>Witamy! <br><span>w świecie górskich przygód</span></h2>
+                        <p>Odkrywaj Tatry z nami – bezpiecznie i niezapomnianie</p>
+                 <div class="social-icons">
+                    <a href="#"><i class="bx bxl-linkedin"></i></a>
+                    <a href="#"><i class='bx bxl-facebook' ></i></a>
+                    <a href="#"><i class='bx bxl-instagram' ></i></a>
+                    <a href="#"><i class='bx bxl-twitter' ></i> </a>
+                 </div>
+            
+                 </div>
+            </div>
+            
+
+            <div class="logreg-box">
+                <div class="form-box login">
+                    <form action="login.php" method="post">
+                        <h2>Cześć! Zaloguj się</h2>
+                        
+                        <div class="input-box">
+                            <span class="icon"><i class='bx bxs-envelope'></i></span>
+                            <input type="email" name="email" required>
+                            <label>Email</label>
+
+                        </div>
+
+                        <div class="input-box">
+                            <span class="icon"><i class='bx bxs-lock-alt' ></i></span>
+                            <input type="password" name="password" required>
+                            <label>Hasło</label>    
+                        </div>
+
+                        <button type="submit" class="btn">Zaloguj się</button>
+
+                        
+                        <div class="login-register">
+                            <p>Pierwszy raz na TatraTrips? <a href="#" class="register-link"> Załóż konto</a></p>
+                        </div>
+
+                         <div class="login-register">
+                            <p>Chcesz wejść bez logowania?<a href="index.php" class="register-link"> Przejdź do strony głównej</a></p>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="form-box register">
+                    <form action="register.php" method="post">
+                        <h2>Cześć! Załóż konto</h2>
+
+                        <div class="input-box">
+                            <span class="icon"><i class='bx bxs-envelope'></i></span>
+                            <input type="email" name="email" required>
+                            <label>Email</label>
+
+                        </div>
+
+                        <div class="input-box">
+                            <span class="icon"><i class='bx bxs-lock-alt' ></i></span>
+                            <input type="password" name="password" required>
+                            <label>Hasło</label>    
+                        </div>
+
+                        <div class="remember-forgot">
+                           
+                        
+                        </div>
+                        <button type="submit"
+                        class="btn">Załóż konto</button>
+
+                        <div class="login-register">
+                            <p>Masz już konto?<a href="#" class="login-link">Zaloguj się</a></p>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+          
+        </div>
+
+
+
+
+    <script src="script-login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+const params = new URLSearchParams(window.location.search);
+
+if (params.has('error')) {
+    let msg = '';
+    switch (params.get('error')) {
+        case 'zle_haslo':
+            msg = 'Nieprawidłowe hasło.';
+            break;
+        case 'nie_istnieje':
+            msg = 'Użytkownik z tym e-mailem nie istnieje.';
+            break;
+        case 'brak_danych':
+            msg = 'Wypełnij formularz logowania.';
+            break;
+        case 'haslo_za_krotkie':
+            msg = 'Hasło musi mieć co najmniej 6 znaków.';
+            break;
+        case 'uzytkownik_istnieje':
+            msg = 'Użytkownik o tym e-mailu już istnieje.';
+            break;
+        case 'blad_rejestracji':
+            msg = 'Nie udało się utworzyć konta. Spróbuj ponownie.';
+            break;
+            case 'brak_malej_litery':
+            msg = 'Hasło musi zawierać co najmniej jedną małą literę.';
+            break;
+            case 'brak_cyfry':
+            msg = 'Hasło musi zawierać co najmniej jedną cyfrę.';
+            break;
+           case 'nieprawidlowe_dane':
+           msg = 'Nieprawidłowe dane formularza.';
+           break;
+           }
+
+    Swal.fire({
+        icon: 'error',
+        title: 'Błąd',
+        text: msg,
+        confirmButtonText: 'OK'
+    });
+}
+
+if (params.get('success') === 'rejestracja_ok') {
+    Swal.fire({
+        icon: 'success',
+        title: 'Rejestracja zakończona!',
+        text: 'Możesz się teraz zalogować.',
+        confirmButtonText: 'OK'
+    });
+}
+
+if (params.get('success') === 'konto_usuniete') {
+    Swal.fire({
+        icon: 'success',
+        title: 'Konto usunięte!',
+        text: 'Twoje konto zostało pomyślnie usunięte.',
+        confirmButtonText: 'OK'
+    });
+}
+
+</script>
+
+
+
+ </body>
+ </html>
