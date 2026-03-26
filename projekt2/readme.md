@@ -1,6 +1,6 @@
 
 # TatraTrips
-traTrips to aplikacja internetowa umożliwiająca rezerwację wycieczek w polskie Tatry. Projekt zapewnia użytkownikom przegląd ofert, możliwość składania rezerwacji, kontaktu z administracją oraz przegląd komentarzy i prognozy pogody.
+TatraTrips to aplikacja internetowa umożliwiająca rezerwację wycieczek w polskie Tatry. Projekt zapewnia użytkownikom przegląd ofert, możliwość składania rezerwacji, kontaktu z administracją oraz przegląd komentarzy i prognozy pogody.
 
 
 ## Wymagania systemowe
@@ -24,11 +24,6 @@ d. Hasło – z phpMyAdmin , powiązane z nazwą użytkownika.
  9. Zmień prawa dostępu do db_connection.php np. chmod o-w db_connection.php oraz prawa dostępu do katalogu uploads, images np. chmod o+rwx images. Gdy będziesz pewny że aplikacja działa usuń install.php np. rm install.php
 
 
-## Autor
-
-* **Daria Shapoval** 
-* *417777*
-* *shapovd*
 
 ## Wykorzystane zewnętrzne biblioteki
 
